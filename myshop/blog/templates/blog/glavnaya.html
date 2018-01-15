@@ -1,0 +1,13 @@
+    {% extends 'blog/index.html' %} 
+
+    {% block glavnaya %}
+        <div align="center">
+            {% if glav.published_date %}
+                <div align="right">
+                    {{ glav.published_date }}
+                </div>
+            {% endif %}
+            <h1>{{ glav.title }}</h1>
+            <h3><p align="left">{% autoescape off%}{{ glav.text|linebreaksbr }}{% endautoescape %}</p></h3>
+        </div>
+    {% endblock %}

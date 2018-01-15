@@ -1,0 +1,132 @@
+
+    {% load staticfiles %}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta charset="utf-8">
+<title>Дрёмушки</title>
+<link rel="stylesheet" href="{% static 'css/blog.css' %}">
+<style>
+
+
+#header2{
+  display: block;
+  position: relative;
+  text-align: right; /* Выравнивание по центру */
+  background-color:  #D2B48C;
+  margin-bottom: 10px;
+}
+
+
+
+
+#footer{
+    margin-top: 30%;
+    height:80px;
+    background-color:  #D2B48C;
+    margin-bottom: 10px;
+}
+
+
+div {
+     margin-right: 1%;
+     margin-left: 1%;
+     margin-top: 1%;
+    }
+
+
+ul {
+    margin-left: 20%;
+    margin-top:0;
+    padding: 0;
+    list-style: none;
+    }
+ul:after {
+    content: ' ';
+    clear: both;
+    float: none;
+    }
+ul.menu > li {
+    float: left;
+    position: relative;
+    }
+ul.menu > li > a {
+    display: block;
+    padding: 15px;
+    color: black;
+    background-color: white;
+    text-decoration: none;
+    }
+ul.menu > li > a:hover {
+    background-color: white;
+    }
+
+
+
+hr {margin-top: 5%;
+    border: none; /* Убираем границу */
+    background-color: #D2B48C /* Цвет линии */
+    color: red; /* Цвет линии для IE6-7 */
+    height: 2px; /* Толщина линии */
+   }
+
+
+
+
+
+
+
+
+
+
+</style>
+
+
+
+
+
+
+</head>
+
+
+
+<body>
+
+<div id="header2" align='center'>
+дрёмушки.ру
+</div>
+
+
+
+
+<header>
+<div style="overflow: hidden;">
+    <div style="width: 100%;">
+        <a href="http://ftcs-russia.ru/" ><img align="left" src="{% static 'blog/img/logo.png' %}" height="30%" width="20%" alt=""></a>
+        <h3>&nbsp; &nbsp; &nbsp;<font color="#B8860B">Дрёмушки</font></h3>
+    </div>
+</div>
+
+    
+    	 <ul class="menu">
+	    <li><a href="http://127.0.0.1:8000/">Главная</a></li>
+	    <li><a href="http://127.0.0.1:8000/about_us">О Нас</a>
+	    <li><a href="http://127.0.0.1:8000/news">Новости</a></li>
+      <li><a href="http://127.0.0.1:8000/shop">Наши товары</a></li>
+      <li><a href="http://127.0.0.1:8000/contacts" >Контакты</a></li>
+
+	</ul>
+</header>
+<hr>
+ {% block glavnaya %}{% endblock %}
+ {% block about_us %}{% endblock %}
+ {% block contact %}{% endblock %}
+ {% block news %}{% endblock %}
+
+
+<div id="footer"><br><h5 align="center"></h5></div>
+
+</body>
+</html>

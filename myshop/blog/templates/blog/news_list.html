@@ -1,0 +1,19 @@
+    {% extends 'blog/index.html' %}
+
+    {% block news %}
+        {% for post in posts %}
+            <div class="admin"> 
+                <div align="center">
+                <h1><p><font size="5" color="blue" face="Arial">{{ post.title }}</font></p></a></h1>
+<!--                <p>{{ post.text|linebreaksbr }}</p> --><!-- Код для отображения всего текста -->
+                 <p><a href="{% url 'news_detail' pk=post.pk %}">Читать статью>></a></p>
+
+                </div>
+            
+                <div align="right">
+                    {{ post.published_date }}
+                </div>
+            </div>
+        {% endfor %}
+    {% endblock news %}
+
